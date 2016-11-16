@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Client creation</h1>
+
+    {{ form_start(form) }}
+    <div class="input-control text size2">{{ form_label(form.nom, 'Nom') }}</div>
+    <div class="input-control text size4">{{ form_widget(form.nom) }}</div><br />
+    <div class="input-control text size2">{{ form_label(form.prenom, 'Prenom') }}</div>
+    <div class="input-control text size4">{{ form_widget(form.prenom) }}</div><br />
+    <div class="input-control text size2">{{ form_label(form.ville, 'Ville') }}</div>
+    <div class="input-control text size4">{{ form_widget(form.ville) }}</div><br />
+    <div class="input-control text size2">{{ form_label(form.rue, 'Rue') }}</div>
+    <div class="input-control text size4">{{ form_widget(form.rue) }}</div><br />
+    <div class="input-control text size2">{{ form_label(form.cP, 'CP') }}</div>
+    <div class="input-control text size4">{{ form_widget(form.cP) }}</div><br />
+    <br/>
+    <div class="input-control text size2 float-left">{{ form_widget(form.save) }}</div>
+    <div class="input-control text size2">{{ form_widget(form.ajouter) }}</div>
+    <a href="{{ path(app.request.attributes.get('_route')) }}" >{{ form_widget(form.reinit) }}</a>
+    <br/>
+    {{ form_rest(form) }}
+    {{ form_errors(form) }}
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('client_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

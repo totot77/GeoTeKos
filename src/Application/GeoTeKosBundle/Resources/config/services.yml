@@ -1,0 +1,4 @@
+services:
+#    application_geo_te_kos.example:
+#        class: Application\GeoTeKosBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

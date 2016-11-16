@@ -1,0 +1,49 @@
+diff a/src/AppBundle/Resources/public/css/bootstrap.css b/src/AppBundle/Resources/public/css/bootstrap.css	(rejected hunks)
+@@ -1353,3 +1353,47 @@
+   -o-transform: rotate(45deg);
+   transform: rotate(45deg);
+ }
++
++
++////// Notify /////
++
++
++.metro.notify-container {
++  position: fixed;
++  right: 0;
++  top: 0;
++  z-index: 1060;
++}
++.metro.notify-container .notify {
++  background-color: #ffffff;
++  display: block;
++  position: relative;
++  min-width: 220px;
++  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
++  color: #1d1d1d;
++  padding: 10px;
++  margin: 2px 2px 2px 0;
++}
++.metro.notify-container .notify .caption {
++  font-size: 18px;
++  line-height: 20px;
++  margin-bottom: 5px;
++}
++.metro.notify-container .notify .content {
++  font-size: 14px;
++  line-height: 16px;
++}
++.metro .notify-wrapper {
++  position: relative;
++  background-color: #1d1d1d;
++  width: auto;
++  height: auto;
++  min-width: 250px;
++  color: #ffffff;
++}
++.metro .shadow {
++  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.2);
++}
++.metro .text-shadow {
++  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
++}

@@ -1,0 +1,161 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}GeoTeKos{% endblock %}</title>
+
+    {# On charge le CSS de bootstrap depuis le site directement #}
+    <link href="{{ asset('bundles/app/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/bootstrap-responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/iconFont.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/docs.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/js/prettify/prettify.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/amelioration.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/plugins/datetimepicker-master/jquery.datetimepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/jquery.dataTables.css') }}" rel="stylesheet">
+
+  {% block stylesheets %}
+  {% endblock %}
+</head>
+
+<body class="metro" style="background-color: #efeae3">
+    <header class="bg-dark">
+
+
+                <div class="navigation-bar">
+                    <div class="navigation-bar-content container">
+                        <a href="#" class="element"><span class="icon-grid-view"></span> Accueil</a>        
+                        <span class="element-divider"></span>
+                        {# {% if app.user %} #}
+                            <a class="element1 pull-menu" href="#"></a>
+                            <ul class="element-menu">
+                                <li>
+                                  <a class="dropdown-toggle" href="#">Clients</a>
+                                  <ul class="dropdown-menu" data-role="dropdown" >
+                                    <li><a href="#">Lister</a></li>
+                                    <li><a href="#}">Ajouter</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-toggle" href="#">Livreur</a>
+                                  <ul class="dropdown-menu" data-role="dropdown" >
+                                    <li><a href="#">Lister</a></li>
+                                    <li><a href="#}">Ajouter</a></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-toggle" href="#">Ajouter</a>
+                                  <ul class="dropdown-menu" data-role="dropdown" >
+                                    <li><a href="#">Lister</a></li>
+                                    <li><a href="#}">Ajouter</a></li>
+                                  </ul>
+                                </li>
+                        
+
+
+                                {# <li class="no-desktop">
+                                    <a href="" class="element link-undecor" style="color:white" >
+                                           {{ 'account'|trans }}: {{app.user.username}}
+                                    </a>
+                                </li>
+                                <li class="no-desktop">
+                                    <a class="element" href="{{path('fos_user_security_logout')}}" >{{ 'logout'|trans }}</a>
+                                </li>
+                                {% if app.security.token and is_granted('ROLE_SUPER_ADMIN')%}
+                                <li class="no-desktop">
+                                    <a class="element" href="{{path('sonata_admin_dashboard')}}" >Administration</a>
+                                </li> #}
+                                {# {% endif %} #}
+                            </ul>
+                        
+                            {# <div class="no-tablet-portrait no-phone">
+                                    <a class="element place-right" href="{{path('fos_user_security_logout')}}" title="{{ 'logout'|trans }}"><span class="icon-exit"></span></a>
+                                    
+                                    <ul class="element-menu place-right">
+                                        <li>
+                                            <a class="dropdown-toggle" href="{{path('fos_user_profile_show')}}">{# {{ 'account'|trans }}:  {{app.user.username}}</a>
+                                            <ul class="dropdown-menu" data-role="dropdown" >
+                                              <li><a href="{{path('fos_user_profile_show')}}">Mon compte</a></li>
+                                              <li><a href="{{ path('choix_dispositif') }}">Mes dispositifs</a></li>
+                                              
+                                              {% if app.security.token and is_granted('ROLE_SUPER_ADMIN')%}
+                                              <li><a href="{{ path('sonata_admin_dashboard') }}">Administration</a></li>
+                                              {% endif %}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <span class="element-divider place-right"></span>
+                            </div> #}
+                        {# {%endif%} #}
+            </div>
+        </div>
+
+
+    </header>
+        <div class="container">
+            <center><h1>{% block h1 %}{% endblock %}</h1></center>
+                <div class="divcenter">
+                  {% if app.request.attributes.get('_route') != "fos_user_security_login" %}
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <li><a href="#"><i class="icon-home"></i></a></li>
+                            {% block fil_ariane %}
+                            {% endblock %}
+                            </ul>
+                        </nav><br />
+                    {% endif %}
+                    {% block body %}
+                    {% endblock %}
+                </div>
+        <hr>
+
+        <div id="pied_de_page"><!--<hr>
+            <p align='center'>© INRA - {{ 'now'|date('Y') }}.</p>-->
+            <p style="text-align:center">
+                <a href="http://www.inra.fr" target="_blank"><span style="float:left"><img src="{{ asset('bundles/app/images/INRA_logo.png') }}" style="width:100px"></span></a>
+
+                <span class="lien_footer">                      
+                    {# <a href="{{ path('mremi_contact_form') }}" >Contact</a>
+                    <em>|</em>
+                    <a href="{{path("credits_mentions_legales")}}" >Credits et Mentions Légales</a> #}
+                                © INRA - {{ 'now'|date('Y') }}.
+
+                </span>
+                <span style="float:right">
+                    <img src="{{ asset('bundles/app/images/tripode.png') }}" style="width:100px">
+                </span>
+            </p>
+        </div>
+      </div>
+
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <!-- Load JavaScript Libraries -->
+    <script src="{{ asset('bundles/app/js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/jquery/jquery.widget.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/jquery/jquery.mousewheel.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/prettify/prettify.js') }}"></script>
+
+    <script src="{{ asset('bundles/app/js/jquery/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/jquery/mobile/jquery.ui.touch-punch.min.js') }}"></script>
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="{{ asset('bundles/app/js/metro.min.js') }}"></script>
+
+    <!-- Local JavaScript -->
+    <script src="{{ asset('bundles/app/js/docs.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/github.info.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/jquery.dynatable.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/metro/dropdown.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/metro/fieldset.js') }}"></script>
+    <script src="{{ asset('bundles/app/plugins/datetimepicker-master/jquery.datetimepicker.js') }}"></script> 
+    <script src="{{ asset('bundles/app/js/dynatable_script.js') }}"></script>
+  {% block javascripts %}
+  {% endblock %}
+
+</body>
+</html>

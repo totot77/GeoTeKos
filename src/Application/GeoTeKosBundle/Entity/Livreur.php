@@ -1,0 +1,126 @@
+<?php
+
+namespace Application\GeoTeKosBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Livreur
+ *
+ * @ORM\Table(name="t_livreur_liv")
+ * @ORM\Entity(repositoryClass="Application\GeoTeKosBundle\Repository\LivreurRepository")
+ */
+class Livreur
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="liv_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liv_nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="liv_prenom", type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Colis", inversedBy="livreurs")
+    * @ORM\JoinColumn(name="liv_col_id", referencedColumnName="col_id")
+    */
+    protected $colis;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Livreur
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return Livreur
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set colis
+     *
+     * @param \Application\GeoTeKosBundle\Entity\Colis $colis
+     *
+     * @return Livreur
+     */
+    public function setColis(\Application\GeoTeKosBundle\Entity\Colis $colis = null)
+    {
+        $this->colis = $colis;
+
+        return $this;
+    }
+
+    /**
+     * Get colis
+     *
+     * @return \Application\GeoTeKosBundle\Entity\Colis
+     */
+    public function getColis()
+    {
+        return $this->colis;
+    }
+}

@@ -1,0 +1,15 @@
+application_user:
+    resource: "@ApplicationUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+
+application_geo_te_kos:
+    resource: "@ApplicationGeoTeKosBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

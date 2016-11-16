@@ -1,0 +1,99 @@
+.metro .breadcrumbs {
+  margin: 0.2em;
+}
+.metro .breadcrumbs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+}
+.metro .breadcrumbs ul li {
+  float: left;
+  margin: 0 .2em 0 1em;
+}
+.metro .breadcrumbs ul li:first-child {
+  margin-left: 0 !important;
+}
+.metro .breadcrumbs ul li:first-child a:before {
+  content: normal;
+}
+.metro .breadcrumbs ul li:last-child {
+  background: none;
+}
+.metro .breadcrumbs ul li:last-child a {
+  color: #1d1d1d;
+}
+.metro .breadcrumbs ul li:last-child:after,
+.metro .breadcrumbs ul li:last-child:before {
+  content: normal;
+}
+.metro .breadcrumbs ul a {
+  background: #d9d9d9;
+  padding: .3em 1em;
+  float: left;
+  text-decoration: none;
+  color: #2e92cf;
+  position: relative;
+}
+.metro .breadcrumbs ul a:hover {
+  background: #1ba1e2;
+  color: #ffffff;
+}
+.metro .breadcrumbs ul a:hover:before {
+  border-color: #1ba1e2 #1ba1e2 #1ba1e2 transparent;
+}
+.metro .breadcrumbs ul a:hover:after {
+  border-left-color: #1ba1e2;
+}
+.metro .breadcrumbs ul a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  border-width: 1.5em 0 1.5em 1em;
+  border-style: solid;
+  border-color: #d9d9d9 #d9d9d9 #d9d9d9 transparent;
+  left: -1em;
+  margin-left: 1px;
+}
+.metro .breadcrumbs ul a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid #d9d9d9;
+  right: -1em;
+  margin-right: 1px;
+}
+.metro .breadcrumbs ul .active,
+.metro .breadcrumbs ul .active:hover {
+  background: none;
+}
+.metro .breadcrumbs ul .active a,
+.metro .breadcrumbs ul .active:hover a {
+  color: #1d1d1d;
+}
+.metro .breadcrumbs ul .active:hover a {
+  color: #ffffff;
+}
+.metro .breadcrumbs ul .active:after,
+.metro .breadcrumbs ul .active:before {
+  content: normal;
+}
+.metro .breadcrumbs.small li {
+  margin: 0 .2em 0 .8em;
+}
+.metro .breadcrumbs.small a {
+  padding: .2em 1em;
+  font-size: 11.9px;
+}
+.metro .breadcrumbs.mini li {
+  margin: 0 .2em 0 .6em;
+}
+.metro .breadcrumbs.mini a {
+  padding: .1em 1em;
+  font-size: 10.5px;
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Clients list</h1>
+
+    <table class="table striped bordered hovered" id="interventions">
+
+        <thead>
+            <tr>
+                <th class="text-left">Id</th>
+                <th class="text-left">Nom</th>
+                <th class="text-left">Prenom</th>
+                <th class="text-left">Ville</th>
+                <th class="text-left">Rue</th>
+                <th class="text-left">Cp</th>
+                <th class="text-left">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.prenom }}</td>
+                <td>{{ client.ville }}</td>
+                <td>{{ client.rue }}</td>
+                <td>{{ client.cP }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('client_edit', { 'id': client.id }) }}"><span class="icon-pencil fg-blue large" title="show"></span></a>
+                        </li>
+                        <li>
+                            <a href="{{ path('client_delete', { 'id': client.id }) }}"><span class="icon-remove fg-red large" title="remove"></span></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('client_new') }}"><span class="icon-plus fg-green large"></span></a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/app/css/jquery-impromptu.css') }}" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/app/js/modal/jquery-impromptu.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/modal/openPrompt.js') }}"></script>
+{% endblock %}

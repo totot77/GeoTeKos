@@ -1,0 +1,2 @@
+aapplication_geo_te_kos:
+     resource:   "@ApplicationGeoTeKosBundle/Resources/config/routing/all.yml"
