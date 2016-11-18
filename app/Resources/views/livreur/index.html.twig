@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Livreurs list</h1>
 
-    <table>
+    <table class="table striped bordered hovered" id="interventions">
         <thead>
             <tr>
                 <th>Id</th>
@@ -32,10 +32,13 @@
         {% endfor %}
         </tbody>
     </table>
+            <a href="{{ path('livreur_new') }}"><span class="icon-plus fg-green large"></span></a>
+{% endblock %}
 
-    <ul>
-        <li>
-            <a href="{{ path('livreur_new') }}">Create a new livreur</a>
-        </li>
-    </ul>
+{% block stylesheets %}
+    <link href="{{ asset('bundles/app/css/jquery-impromptu.css') }}" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/app/js/modal/jquery-impromptu.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/modal/openPrompt.js') }}"></script>
 {% endblock %}

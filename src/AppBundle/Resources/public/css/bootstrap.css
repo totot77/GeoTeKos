@@ -654,7 +654,7 @@ tr,td{
 .metro .navbar {
   width: 100%;
   display: block;
-  background-color: #128023;
+  background-color: #00a4f5;
   color: #ffffff;
 }
 .metro .navigation-bar .navigation-bar-content,
@@ -695,7 +695,7 @@ tr,td{
 .metro .navigation-bar .navbar-content .element:hover,
 .metro .navbar .navbar-content .element:hover {
   /*background-color: #00aafd;*/
-  background-color: #60a917;
+  background-color: #1e81e7;
 }
 .metro .navigation-bar .navigation-bar-content .element-divider,
 .metro .navbar .navigation-bar-content .element-divider,
@@ -1134,7 +1134,7 @@ tr,td{
   color: #e51400 !important;
 }
 .metro .fg-green {
-  color: #60a917 !important;
+  color: #00a4f5 !important;
 }
 .metro .fg-white {
   color: #ffffff !important;
@@ -1459,18 +1459,18 @@ tr,td{
   padding: .3em 1em;
   float: left;
   text-decoration: none;
-  color: #128023;
+  color: #00a4f5;
   position: relative;
 }
 .metro .breadcrumbs ul a:hover {
-  background: #128023;
+  background: #00a4f5;
   color: #ffffff;
 }
 .metro .breadcrumbs ul a:hover:before {
-  border-color: #128023 #128023 #128023 transparent;
+  border-color: #00a4f5 #00a4f5 #00a4f5 transparent;
 }
 .metro .breadcrumbs ul a:hover:after {
-  border-left-color: #128023;
+  border-left-color: #00a4f5;
 }
 .metro .breadcrumbs ul a:before {
   content: "";
